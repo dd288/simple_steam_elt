@@ -1,5 +1,5 @@
 POSTGRES_USER=giannis
 POSTGRES_PASSWORD=#lata1996prr
-POSTGRES_DB=warehouse
-POSTGRES_HOST=localhost
+POSTGRES_DB=steam_warehouse
+POSTGRES_HOST=host.docker.internal
 POSTGRES_PORT=5432

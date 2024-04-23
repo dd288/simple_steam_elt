@@ -22,7 +22,7 @@ def get_steam_data() -> List[Dict[str, Any]]:
 # Function to run sql query
 def steam_data_insert_query():
     return '''
-    INSERT INTO steam.topgames (
+    INSERT INTO steam."steam.topgames" (
         appid,
         name,
         developer,
@@ -32,21 +32,28 @@ def steam_data_insert_query():
         ccu
     )
     VALUES (
-        %(appid)d,
+        %(appid)s,
         %(name)s,
         %(developer)s,
-        %(positive)d,
-        %(negative)d,
+        %(positive)s,
+        %(negative)s,
         %(price)s,
-        %(ccu)d
+        %(ccu)s
     );
 '''
 
 
-def main():
+def run() -> None:
+    # Fetch data from Steam API
     data = get_steam_data()
+
+    # Convert the dictionary into a list of dictionaries
+    data_list = [value for key, value in data.items()]
+
+    # Establish connection to the database
     with PostgresWerehouseConn(werehouse_cred()).managed_cursor() as curr:
-        p.execute_batch(curr, steam_data_insert_query(), data)
+        # Execute batch insert
+        p.execute_batch(curr, steam_data_insert_query(), data_list)
     
 if __name__ == "__main__":
-    main()
+    run()

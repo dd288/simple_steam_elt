@@ -1,0 +1,4 @@
+appid, name, developer, positive, negative, price, ccu
+1, test1, dev1, 1, 1, 100, 1000
+2, test2, dev2, 2, 2, 200, 2000
+3, test3, dev3, 3, 3, 300, 3000
