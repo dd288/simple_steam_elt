@@ -37,10 +37,10 @@ db-migration:
 	@read -p "Enter migration name:" migration_name; docker exec pipeline yoyo new ./migrations -m "$$migration_name"
 
 warehouse-migration:
-	docker exec pipeline yoyo develop --no-config-file --database postgres://sdeuser:sdepassword1234@warehouse:5432/steam ./migrations
+	docker exec pipeline yoyo develop --no-config-file --database postgres://giannis:#lata1996prr@warehouse:5432/steam_warehouse ./migrations
 
 warehouse-rollback:
-	docker exec pipelinerunner yoyo rollback --no-config-file --database postgres://sdeuser:sdepassword1234@warehouse:5432/steam ./migrations
+	docker exec pipelinerunner yoyo rollback --no-config-file --database postgres://giannis:#lata1996prr@warehouse:5432/steam_warehouse ./migrations
 
 ################################################
 
