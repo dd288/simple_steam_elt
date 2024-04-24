@@ -1,5 +1,26 @@
-version: '1.0'
+version: '1.1'
 services:
+  warehouse:
+    image: postgres:latest
+    container_name: warehouse
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    healthcheck:
+      test: [
+        "CMD",
+        "pg_isread",
+        "-d",
+        "${POSTGRES_DB}",
+        "${POSTGRES_USER}"
+      ]
+      interval: 5s
+      retries: 5
+    restart: always
+    ports:
+      - "5432:5432"
+
   pipeline:
     image: pipeline
     container_name: pipeline
@@ -14,3 +35,9 @@ services:
       WAREHOUSE_DB: ${POSTGRES_DB}
       WAREHOUSE_HOST: ${POSTGRES_HOST}
       WARREHOUSE_PORT: ${POSTGRES_PORT}
+
+  dashboard:
+    image: metabase/metabase
+    container_name: dashboard
+    ports:
+      - "3000:3000"

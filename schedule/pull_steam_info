@@ -1,3 +1,3 @@
 SHELL=/bin/bash
 HOME=/
-*/1 * * * * WAREHOUSE_USER=giannis WAREHOUSE_PASSWORD=#lata1996prr WAREHOUSE_DB=steam_warehouse WAREHOUSE_HOST=host.docker.internal WAREHOUSE_PORT=5432  PYTHONPATH=/code/src /usr/local/bin/python /code/src/steampricemonitor/price_etl.py
+*/60 * * * * WAREHOUSE_USER=giannis WAREHOUSE_PASSWORD=#lata1996prr WAREHOUSE_DB=steam_warehouse WAREHOUSE_HOST=host.docker.internal WAREHOUSE_PORT=5432  PYTHONPATH=/code/src /usr/local/bin/python /code/src/steampricemonitor/price_etl.py
