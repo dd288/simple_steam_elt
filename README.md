@@ -9,6 +9,9 @@ and vizualize it into a dashboard using [Metabase](https://www.metabase.com/).
 This whole process of exctracting, transforming and loading the data is done using python. Postgres is our Data Warehouse and Metabase is used for the 
 Data Vizualization.
 
+### Dashboard vizualization
+![alt text](https://github.com/dd288/simple_steam_elt/blob/main/resources/images/Pasted%20image.png)
+
 ## Setup
 ### Pre-requisites
 
