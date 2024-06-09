@@ -1,15 +1,15 @@
 # Steam top 100 games - active player count
 
 This pipeline is an ETL that pulls data from a third-party steam API called [steamspy API](https://steamspy.com/), load the data into our warehouse
-and vizualize it into a dashboard using [Metabase](https://www.metabase.com/).
+and visualize it into a dashboard using [Metabase](https://www.metabase.com/).
 
 ## Architecture
 ![alt text](https://github.com/dd288/simple_steam_elt/blob/main/resources/images/readme_pipe.png)
 
 This whole process of exctracting, transforming and loading the data is done using python. Postgres is our Data Warehouse and Metabase is used for the 
-Data Vizualization.
+Data Visualization.
 
-### Dashboard vizualization
+### Dashboard visualization
 ![alt text](https://github.com/dd288/simple_steam_elt/blob/main/resources/images/Pasted%20image.png)
 
 ## Setup
